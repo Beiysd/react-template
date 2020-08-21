@@ -2,11 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { ConfigProvider } from 'antd';//全局化配置
+import zh_CN from 'antd/lib/locale-provider/zh_CN'//antd中文
+import 'moment/locale/zh-cn'//moment时间格式中文
 
+import * as serviceWorker from './serviceWorker';
+import 'antd/dist/antd.css';
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ConfigProvider locale={zh_CN}>
+      <App />
+    </ConfigProvider>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
