@@ -13,14 +13,7 @@ export default [
     exact: true,
     name: '首页',
     component: Home,
-    children:[
-      {
-        path: '/swiper',
-        exact: true,
-        name: 'Swiper滑动',
-        component: Swiper,
-      }
-    ]
+
   },
   {
     path: '/date-select',
@@ -28,4 +21,16 @@ export default [
     name: '时间类型选择',
     component: DateSelect
   },
+  {
+    padth: '',
+    name: '父级',
+    children: [
+      {
+        path: '/swiper',
+        exact: true,
+        name: 'Swiper滑动',
+        component: Swiper,
+      }
+    ]
+  }
 ]

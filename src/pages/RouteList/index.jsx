@@ -26,7 +26,7 @@ class RouteList extends Component {
   render() {
     return (
       <div className={styles.content}>
-        <Menu selectedKeys={[this.pathSelect()]}>
+        <Menu selectedKeys={[this.pathSelect()]} mode="inline" theme="dark" className={styles.menu}>
           {routes.map((v) =>
             v.children && v.children.length > 0 ? (
               <SubMenu title={v.name}>

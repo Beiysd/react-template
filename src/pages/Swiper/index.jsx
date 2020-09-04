@@ -28,9 +28,9 @@ class Swipers extends Component {
       speed: 500,
       mousewheel: true
     });
-    // setTimeout(() => {
-    //   this.setState({ loading: false });
-    // }, 10);
+    setTimeout(() => {
+      this.setState({ loading: false });
+    }, 1000);
   };
 
   render() {
