@@ -6,9 +6,7 @@ import { encrypt, decrypt } from "@/utils/aes";
  * @desc 将value转化为加密字符串拼接到url后缀
  */
 function objectToSearch(value) {
-  if (!value) {
-    return ''
-  } else {
+  if (value) {
     let encrypted = '?' + encrypt(value)
     return encrypted
   }
@@ -25,6 +23,8 @@ function getSearchObject() {
     let str = value[1]
     let decrypted = decrypt(str)
     return decrypted
+  } else {
+    return {}
   }
 }
 

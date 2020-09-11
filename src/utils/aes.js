@@ -18,7 +18,6 @@ export function encrypt(value) {
     console.error("aes encrypt error: param:'value' is required")
     return ''
   }
-
   try {
     const str = JSON.stringify(value)
     const ciphertext = CryptoJS.AES.encrypt(str, key, { iv })

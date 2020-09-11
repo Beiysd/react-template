@@ -109,7 +109,7 @@ class Timeist extends Component {
     this.setState({ timeCode: code });
   };
   render() {
-    const { yui, mio, ritsu, mugi, azusa, test } = getSearchObject();
+    const { yui = "", mio = "", ritsu = "", mugi = "", azusa = "", test = "" } = getSearchObject();
     const { timeCode, startTime, endTime } = this.state;
     console.log("startTime, endTime==", startTime, endTime);
     return (
