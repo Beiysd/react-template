@@ -5,14 +5,8 @@ const dateFormat = 'YYYY-MM-DD'
 const times = String(miment().format(dateFormat)).split('-')
 const yearTime = Number(times[0])
 const monthTime = Number(times[1])
-const dateTime = Number(times[2])
 
-const doubleMonth = [1, 3, 5, 7, 8, 10, 12]
-const aloneMonth = [4, 6, 9, 11]
-//今天星期几-便于测试
-const week = miment().format('ww')
-// const week = miment(`${yearTime}-${monthTime}-${dateTime}`).format('ww')
-// const week = miment(`${2020}-${8}-${22}`).format('ww')
+
 //判断闰年与否
 export function leapyear() {
 

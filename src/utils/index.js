@@ -27,8 +27,25 @@ function getSearchObject() {
     return {}
   }
 }
+/**
+ * @name randomNum
+ * @param {Number} num 生成几位随机数
+ * @param Math.random() 0-1之间的随机数
+ * @param Math.floor() 向下取整
+ * @description 随机数生成
+ */
+
+function randomNum(num) {
+  let index = num && Number(num) ? Number(num) : 18 //默认生成18位随机数
+  let randoms = ''
+  for (let i = 0; i < index; i++) {
+    randoms += JSON.stringify(Math.floor(Math.random() * 10))
+  }
+  return randoms
+}
 
 export {
   objectToSearch,
-  getSearchObject
+  getSearchObject,
+  randomNum
 }

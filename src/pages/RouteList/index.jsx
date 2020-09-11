@@ -3,9 +3,9 @@
  * @description 路由
  * @date
  */
-import React, { Component, lazy } from "react";
+import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import { Menu, Icon } from "antd";
+import { Menu } from "antd";
 import routes from "@/router";
 import styles from "./styles.module.less";
 

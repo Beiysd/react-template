@@ -7,7 +7,7 @@
 import React, { Component } from "react";
 import { Button, Input } from "antd";
 import { encrypt, decrypt } from "@/utils/aes";
-import { objectToSearch } from "@/utils";
+import { objectToSearch, randomNum } from "@/utils";
 import styles from "./styles.module.less";
 
 const palpitation = "有人住高楼，有人在深沟；有人光万丈，有人一身锈；世人万千种，浮云莫去求；斯人若彩虹，遇上方知有";
@@ -41,6 +41,9 @@ class Home extends Component {
   };
 
   render() {
+    const config = window.APP_CONFIG;
+    const random = randomNum();
+    console.log("window.APP_CONFIG==", window, config);
     return (
       <div className={styles.btn}>
         <div>
@@ -58,6 +61,7 @@ class Home extends Component {
         <div>解密：{this.state.decryptStr}</div>
         <p></p>
         <Button onClick={this.pageChange}>url-search</Button>
+        <h3>随机数：{random}</h3>
       </div>
     );
   }

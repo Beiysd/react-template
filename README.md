@@ -3,4 +3,4 @@
 3.@代替 src 路径
 4.prettierrc 代码规范化文件
 5.AES 添加了 url-search 传参加密
-4.url-search 传参及使用的公共方法
+6.url-search 传参及使用的公共方法 7.随机数公共方法
