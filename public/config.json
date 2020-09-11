@@ -1,0 +1,5 @@
+{
+  "devProxy": "http://edu1.zhzy.net.cn",
+  "testProxy": "http://test.guoli-edu.com",
+  "provProxy": "http://edu.guoli-edu.com"
+}
