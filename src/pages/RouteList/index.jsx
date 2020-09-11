@@ -29,7 +29,7 @@ class RouteList extends Component {
         <Menu selectedKeys={[this.pathSelect()]} mode="inline" theme="dark" className={styles.menu}>
           {routes.map((v) =>
             v.children && v.children.length > 0 ? (
-              <SubMenu title={v.name}>
+              <SubMenu title={v.name} key={v.name}>
                 {v.children.map((item) => (
                   <Menu.Item key={item.path} onClick={() => this.pageChange(item.path)}>
                     {item.name}

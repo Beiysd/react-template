@@ -6,8 +6,9 @@
  */
 import React, { Component } from "react";
 import { leaperWeek, leaperMonth, leaperDate, leaperTerm } from "@/utils/now-date";
-import { DatePicker, message } from "antd";
+import { DatePicker } from "antd";
 import moment from "moment";
+import { getSearchObject } from "@/utils";
 import styles from "./styles.module.less";
 const { RangePicker } = DatePicker;
 const timeList = [{ code: 0, name: "全部" }, { code: 1, name: "本日" }, { code: 2, name: "本周" }, { code: 3, name: "本月" }, { code: 4, name: "本学期" }];
@@ -108,22 +109,32 @@ class Timeist extends Component {
     this.setState({ timeCode: code });
   };
   render() {
+    const { yui, mio, ritsu, mugi, azusa, test } = getSearchObject();
     const { timeCode, startTime, endTime } = this.state;
     console.log("startTime, endTime==", startTime, endTime);
     return (
-      <div className={styles.content}>
-        <div className={styles.ul}>
-          {timeList.map((v) => (
-            <li key={v.code} className={`${styles.inline} ${timeCode === v.code ? styles.active : null}`} onClick={() => this.typeChange(v.code)}>
-              {v.name}
-            </li>
-          ))}
+      <div>
+        <div className={styles.content}>
+          <div className={styles.ul}>
+            {timeList.map((v) => (
+              <li key={v.code} className={`${styles.inline} ${timeCode === v.code ? styles.active : null}`} onClick={() => this.typeChange(v.code)}>
+                {v.name}
+              </li>
+            ))}
+          </div>
+          <RangePicker
+            style={{ minWidth: "210px", maxWidth: "15%", marginLeft: "2%" }}
+            value={!startTime ? null : [moment(startTime, dateFormat), moment(endTime, dateFormat)]}
+            onChange={this.getRangePikcer}
+          />
         </div>
-        <RangePicker
-          style={{ minWidth: "210px", maxWidth: "15%", marginLeft: "2%" }}
-          value={!startTime ? null : [moment(startTime, dateFormat), moment(endTime, dateFormat)]}
-          onChange={this.getRangePikcer}
-        />
+        <p>getSearchObject</p>
+        <p>{yui}</p>
+        <p>{mio}</p>
+        <p>{ritsu}</p>
+        <p>{mugi}</p>
+        <p>{azusa}</p>
+        <p>{test}</p>
       </div>
     );
   }
