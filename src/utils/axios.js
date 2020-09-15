@@ -2,12 +2,11 @@
  * @desc axios 接口方法
  */
 import axios from 'axios'
-import { notification } from 'antd'
+import { notification } from 'antd'//antd侧边展示报错信息的组件，具体用法参照antd
 import { proxys } from '@/utils'
 
 //时间戳
 const date = new Date().getTime()
-const token = '3355ef284f8045f1b9770deed57175fd'
 
 const DEV_PROXY = proxys().devProxy//开发
 const TEST_PROXY = proxys().testProxy//测试
@@ -81,7 +80,7 @@ async function post(url, param) {
  */
 async function get(url) {
   try {
-    const response = await axiosInstance.get(`${urlTest(url)}`)
+    const response = await axiosInstance.get(`${urlTest(url)}&date=${date}`)
     const res = response.data
     //可在此处添加特殊code标记，如过期提示-返回登录
     if (res.error_code === status.success) {
