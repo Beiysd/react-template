@@ -1,6 +1,20 @@
 import { encrypt, decrypt } from "@/utils/aes";
 
 /**
+ * @name proxy
+ * @desc 域名地址，代理前缀
+ */
+function proxys() {
+  return ({
+    "devProxy": "http://edu1.zhzy.net.cn",
+    "testProxy": "http://test.guoli-edu.com",
+    "provProxy": "http://edu.guoli-edu.com"
+  })
+
+}
+
+
+/**
  * @name objectToSearch
  * @param {Object} value 地址栏传递内容
  * @desc 将value转化为加密字符串拼接到url后缀
@@ -45,6 +59,7 @@ function randomNum(num) {
 }
 
 export {
+  proxys,
   objectToSearch,
   getSearchObject,
   randomNum

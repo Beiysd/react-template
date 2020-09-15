@@ -27,6 +27,9 @@ const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 
 const postcssNormalize = require('postcss-normalize');
 
+// 打包是否去除'console'和'debug'
+const shouldRemoveLogs = process.env.REMOVE_LOGS === 'true'
+
 const appPackageJson = require(paths.appPackageJson);
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
